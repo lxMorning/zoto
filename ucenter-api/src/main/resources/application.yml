@@ -1,0 +1,204 @@
+access:
+    key:
+        id: '@access.key.id@'
+        secret: '@access.key.secret@'
+aliyun:
+    accessKeyId: '@aliyun.accessKeyId@'
+    accessKeySecret: '@aliyun.accessKeySecret@'
+    mail-sms:
+        access-key-id: '@aliyun.mail-sms.access-key-id@'
+        access-secret: '@aliyun.mail-sms.access-secret@'
+        email-tag: '@aliyun.mail-sms.email-tag@'
+        from-address: '@aliyun.mail-sms.from-address@'
+        from-alias: '@aliyun.mail-sms.from-alias@'
+        region: '@aliyun.mail-sms.region@'
+        sms-sign: '@aliyun.mail-sms.sms-sign@'
+        sms-template: '@aliyun.mail-sms.sms-template@'
+    ossBucketName: '@aliyun.ossBucketName@'
+    ossEndpoint: '@aliyun.ossEndpoint@'
+commission:
+    need:
+        real-name: '@commission.need.real-name@'
+    promotion:
+        second-level: '@commission.promotion.second-level@'
+es:
+    mine:
+        index: '@es.mine.index@'
+        type: '@es.mine.type@'
+    password: '@es.password@'
+    port: '@es.port@'
+    private:
+        ip: '@es.private.ip@'
+    public:
+        ip: '@es.public.ip@'
+    username: '@es.username@'
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: '@eureka.client.serviceUrl.defaultZone@'
+    instance:
+        instance-id: '@eureka.instance.instance-id@'
+        prefer-ip-address: true
+geetest:
+    captchaId: 487572ec3835355ef93d9f975b3a4533
+    newFailback: 0
+    privateKey: f5f4b8a31ea3f7dfec4fe98b2bb51689
+logging:
+    level:
+        '*': debug
+management:
+    context-path: '@management.context-path@'
+    security:
+        enabled: '@management.security.enabled@'
+person:
+    promote:
+        prefix: '@person.promote.prefix@'
+security:
+    user:
+        name: '@security.user.name@'
+        password: '@security.user.password@'
+server:
+    context-path: /uc
+    port: 6001
+sms:
+    driver: '@sms.driver@'
+    gateway: '@sms.gateway@'
+    internationalGateway: '@sms.internationalGateway@'
+    internationalPassword: '@sms.internationalPassword@'
+    internationalUsername: '@sms.internationalUsername@'
+    password: '@sms.password@'
+    sign: '@sms.sign@'
+    username: '@sms.username@'
+spark:
+    system:
+        admin-phones: '@spark.system.admin-phones@'
+        admins: '@spark.system.admins@'
+        data-center-id: 1
+        host: '@spark.system.host@'
+        name: '@spark.system.name@'
+        work-id: 1
+spring:
+    application:
+        name: uc
+    data:
+        jpa:
+            repositories:
+                enabled: true
+        mongodb:
+            database: '@spring.data.mongodb.database@'
+            uri: '@spring.data.mongodb.uri@'
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        druid:
+            aop-patterns: com.lcf.service.*
+            filters: stat,wall,log4j
+            initialSize: 10
+            maxActive: 200
+            maxPoolPreparedStatementPerConnectionSize: 20
+            maxWait: 6000
+            minEvictableIdleTimeMillis: 6000
+            minIdle: 10
+            poolPreparedStatements: true
+            stat-view-servlet:
+                allow: ''
+                deny: ''
+                enabled: true
+                login-password: '@druidlogin-password@'
+                login-username: '@druidlogin-username@'
+                reset-enable: false
+                url-pattern: /druid/*
+            testOnBorrow: false
+            testOnReturn: false
+            testWhileIdle: true
+            timeBetweenEvictionRunsMillis: 6000
+            validationQuery: SELECT 1
+            web-stat-filter:
+                enabled: true
+                exclusions: /druid/*,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico
+                principal-cookie-name: cookie_name
+                principal-session-name: session_name
+                profile-enable: ''
+                session-stat-enable: true
+                session-stat-max-count: 10
+                url-pattern: /*
+        password: '@spring.datasource.password@'
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: '@spring.datasource.url@'
+        username: '@spring.datasource.username@'
+    devtools:
+        restart:
+            enabled: true
+    freemarker:
+        cache: false
+        template-loader-path: classpath:/templates
+    http:
+        multipart:
+            maxFileSize: 10MB
+            maxRequestSize: 10MB
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        serialization:
+            indent_output: true
+        time-zone: GMT+8
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+    kafka:
+        bootstrap-servers: '@spring.kafka.bootstrap-servers@'
+        consumer:
+            auto:
+                commit:
+                    interval: 100
+                offset:
+                    reset: earliest
+            concurrency: 9
+            enable:
+                auto:
+                    commit: false
+            group:
+                id: default-group
+            maxPollRecordsConfig: 50
+            session:
+                timeout: 15000
+        producer:
+            batch:
+                size: 256
+            buffer:
+                memory: 1048576
+            linger: 1
+            retries: 0
+    mail:
+        host: '@spring.mail.host@'
+        password: '@spring.mail.password@'
+        port: '@spring.mail.port@'
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    socketFactory:
+                        class: javax.net.ssl.SSLSocketFactory
+                    starttls:
+                        enable: true
+                        required: true
+        username: '@spring.mail.username@'
+    redis:
+        host: '@spring.redis.host@'
+        password: '@spring.redis.password@'
+        pool:
+            max-active: 300
+            max-idle: 100
+            max-wait: 60000
+            min-idle: 20
+        port: '@spring.redis.port@'
+        timeout: 30000
+transfer:
+    key: ''
+    smac: ''
+    url: ''
+water:
+    proof:
+        app:
+            id: 2076680797
+            secret:
+                key: 0eVVmPN6KW4aGPDjGW73YpQ**

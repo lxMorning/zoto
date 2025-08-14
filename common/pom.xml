@@ -17,6 +17,7 @@
         <module>common-netty</module>
         <module>common-netty-api</module>
         <module>common-netty-core</module>
+        <module>common-spark-core</module>
     </modules>
 
     <properties>

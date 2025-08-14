@@ -78,11 +78,9 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
         <dependency>
-			<groupId>com.sparkframework</groupId>
-			<artifactId>spark-core</artifactId>
-			<scope>system</scope>
-            <version>2.6.0</version>
-			<systemPath>${project.basedir}/lib/spark-core-2.6.0.jar</systemPath>
+			<groupId>com.bizzan.bitrade.common</groupId>
+			<artifactId>common-spark-core</artifactId>
+            <version>1.0</version>
 		</dependency>
     </dependencies>
 

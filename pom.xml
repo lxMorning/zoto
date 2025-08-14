@@ -23,6 +23,7 @@
         <module>ucenter-api</module>
         <module>cloud</module>
         <module>wallet</module>
+		<module>common</module>
 	</modules>
 
 	<parent>
@@ -39,7 +40,7 @@
 		<project.build.jdk_version>1.8</project.build.jdk_version>
 		<!-- spring -->
 		<spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
-		<spring-boot_version>1.5.22.RELEASE</spring-boot_version>
+		<spring-boot.version>1.5.22.RELEASE</spring-boot.version>
 		<!-- 数据库连接 -->
 		<druid_version>1.1.24</druid_version>
 		<mysql.version>8.0.22</mysql.version>
@@ -66,9 +67,9 @@
 		<!-- Test Libs -->
 		<junit_version>4.12</junit_version>
 		<!--shiro 高危权限绕过漏洞。https://www.freebuf.com/vuls/249112.html -->
-		<shiro_version>1.7.0</shiro_version>
+		<shiro.version>1.7.0</shiro.version>
 		<!--netty 高危拒绝服务漏洞。https://www.anquanke.com/vul/id/1984197 -->
-		<netty_version>4.1.58.Final</netty_version>
+		<netty.version>4.1.58.Final</netty.version>
 		<protostuff_version>1.5.4</protostuff_version>
 		<ehcache_version>2.6.11</ehcache_version>
 		<guava_version>21.0</guava_version>
@@ -138,65 +139,65 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-cache</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-data-redis</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-freemarker</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-web</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-websocket</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-devtools</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-data-jpa</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-autoconfigure</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-test</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 				<scope>test</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-actuator</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-security</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<!-- 发送邮件. -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-mail</artifactId>
-				<version>${spring-boot_version}</version>
+				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>junit</groupId>
@@ -307,12 +308,12 @@
 			<dependency>
 				<groupId>org.apache.shiro</groupId>
 				<artifactId>shiro-spring</artifactId>
-				<version>${shiro_version}</version>
+				<version>${shiro.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.shiro</groupId>
 				<artifactId>shiro-quartz</artifactId>
-				<version>${shiro_version}</version>
+				<version>${shiro.version}</version>
 				<exclusions>
 					<exclusion>
 						<groupId>com.zaxxer</groupId>
@@ -327,12 +328,12 @@
 			<dependency>
 				<groupId>org.apache.shiro</groupId>
 				<artifactId>shiro-ehcache</artifactId>
-				<version>${shiro_version}</version>
+				<version>${shiro.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.shiro</groupId>
 				<artifactId>shiro-core</artifactId>
-				<version>${shiro_version}</version>
+				<version>${shiro.version}</version>
 			</dependency>
 
 			<dependency>
@@ -451,10 +452,13 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.7.0</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.ow2.asm</groupId>
+						<artifactId>asm</artifactId>
+						<version>6.2</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
